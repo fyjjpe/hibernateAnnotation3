@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">
+            jdbc:mysql://127.0.0.1:3306/hibernate2?useUnicode=true&amp;characterEnconding=UTF-8
+        </property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- 输出底层的sql(可选配置内容) -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <!--测试一对一单向外键关联-->
+        <!--<mapping class="com.oneToOne_fk.Students"/>-->
+        <!--<mapping class="com.oneToOne_fk.IdCard"/>-->
+
+        <!--测试一对一双向外键关联-->
+        <!--<mapping class="com.oneToOne_bfk.Students"/>-->
+        <!--<mapping class="com.oneToOne_bfk.IdCard"/>-->
+
+        <!--多对一单向外键关联-->
+        <!--<mapping class="com.manyToOne_fk.Students"/>-->
+        <!--<mapping class="com.manyToOne_fk.ClassRoom"/>-->
+
+        <!--一对多单向外键关联-->
+        <!--<mapping class="com.oneToMany_fk.Students"/>-->
+        <!--<mapping class="com.oneToMany_fk.ClassRoom"/>-->
+
+        <!--一对多（多对一）双向外键关联-->
+        <!--<mapping class="com.oneToMany_bfk.Students"/>-->
+        <!--<mapping class="com.oneToMany_bfk.ClassRoom"/>-->
+
+        <!--多对多单向外键关联-->
+        <!--<mapping class="com.manyToMany_fk.Students"/>-->
+        <!--<mapping class="com.manyToMany_fk.Teachers"/>-->
+
+        <!--多对多双向外键关联-->
+        <mapping class="com.manyToMany_bfk.Students"/>
+        <mapping class="com.manyToMany_bfk.Teachers"/>
+
+
+    </session-factory>
+</hibernate-configuration>
